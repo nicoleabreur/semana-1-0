@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Patho Surf School</title>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Unica+One" rel="stylesheet">
+
+
+    
+	     
+     <style type="text/css">
+	     	#myform label.error {
+			  color: red;
+			  font-size: 21px;
+			  text-transform: lowercase;
+			  position: relative;
+			}
+     </style>
+
+</head>
+
+
+<body class="background-img">
+
+
+
+    
+	<form id="myform">
+
+	<div class="h1" >
+	   <h1> FILL THIS FORM </h1> </div>
+
+
+	    
+		<label>●Full Name</label> 
+		<input name="name" type="text" placeholder="Enter full name">  
+		
+		<br>
+
+		 
+
+		<label>●E-mail address </label> 
+		<input name="email" type="text" placeholder="example@example.com"> 
+
+		<br>
+
+		<label>●Phone Number</label>  
+		<input name="phone" type="text" placeholder=" 1-800-000-0000">  
+
+		<br>
+
+		<label>●Your Location</label>
+		<input name="name2" type="text" placeholder="Add location">
+
+		<br>
+
+	
+		
+       
+		<div id= "boton1"> <button>Send</button>  </div>
+		</div>
+
+	</form>
+    
+
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="js/jquery.maskedinput.js" type="text/javascript"></script>
+<script src="js/jquery.validate.min.js" type="text/javascript"></script>
+
+<script>
+$().ready(function() {
+  
+  $("#myform").validate({
+    rules: {
+      name: "required",
+      name2: "required",
+      message: "required",
+      id: "required",
+      phone: "required",
+      activity: {
+      	required: true
+      },
+      email: {
+      required: true,
+      email: true
+      },
+    },
+    messages: {
+      name: " *Please enter a valid full name",
+      name2: "*Please enter a valid location",
+      id: "*Please enter a valid digit",
+      phone: "*PLease enter valid number",
+      message: "*Please enter a message",
+      activity: {
+        required: "*Por favor selecciona una actividad"
+      },
+      email: {
+        required: "*Please enter valid email ",
+        email: "*Por favor introduzca un e-mail válido"
+      },
+    }
+  });
+});
+
+jQuery(function($){
+   $("#phone_number").mask("(999) 999-9999");
+});
+</script>
+
+
+	</html>
+ 
